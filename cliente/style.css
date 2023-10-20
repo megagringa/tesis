@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Fondo gris claro */
 }
 
 .menu, .cart, .actions {
@@ -31,4 +32,11 @@ button {
 
 button:hover {
     background-color: #005f80;
+}
+
+/* Estilos para las imágenes en la sección de platillos */
+.menu-item img {
+    width: 100px; /* Ancho deseado */
+    height: 100px; /* Alto deseado */
+    object-fit: cover; /* Escalar la imagen manteniendo su relación de aspecto */
 }
