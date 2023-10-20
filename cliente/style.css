@@ -1,14 +1,18 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2; /* Fondo gris claro */
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+    padding: 0;
 }
 
 .menu, .cart, .actions {
-    float: left;
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 30%;
+    box-sizing: border-box;
+    float: left;
 }
 
 ul {
@@ -24,19 +28,26 @@ button {
     background-color: #008CBA;
     color: #fff;
     border: none;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    width: 100%;
 }
 
 button:hover {
     background-color: #005f80;
 }
 
-/* Estilos para las imágenes en la sección de platillos */
+.menu-item {
+    display: flex;
+    flex-direction: column; /* Aplicar dirección de columna para el diseño deseado */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
 .menu-item img {
-    width: 100px; /* Ancho deseado */
-    height: 100px; /* Alto deseado */
-    object-fit: cover; /* Escalar la imagen manteniendo su relación de aspecto */
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }

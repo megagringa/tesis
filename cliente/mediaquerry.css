@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+    .menu, .cart, .actions {
+        width: 100%;
+    }
+
+    .menu-item {
+        flex-wrap: wrap;
+        margin-right: 0;
+    }
+
+    .menu-item img {
+        width: 50%;
+        margin-right: 5%;
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-item h3, .menu-item p {
+        margin-bottom: 15px;
+    }
+}

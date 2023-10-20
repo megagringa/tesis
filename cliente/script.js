@@ -3,32 +3,36 @@ document.addEventListener("DOMContentLoaded", function() {
     const cartList = document.getElementById("cart-list");
     const totalDisplay = document.getElementById("total-price");
     const clearCartButton = document.getElementById("clear-cart");
+    const callWaiterButton = document.getElementById("call-waiter");
+    const orderDrinkButton = document.getElementById("order-drink");
+    const requestBillButton = document.getElementById("request-bill");
+    const cancelOrderButton = document.getElementById("cancel-order");
 
     // Array para almacenar los elementos del menú
     
     const menuItems = [
         {
-            name: "Plato 1",
-            price: 10.99,
-            image: "img/fxs.jpg" // Agrega la URL de la imagen
+            name: "Fideos con Salsa",
+            price: 1200,
+            image: "cliente/img/fxs.jpg" // Agrega la URL de la imagen
         },
         {
-            name: "Plato 2",
-            price: 12.99,
-            image: "url_de_la_imagen_2.jpg" // Agrega la URL de la imagen
+            name: "Ñoquis con Salsa",
+            price: 1500,
+            image: "cliente/img/nxs.jpeg" // Agrega la URL de la imagen
         },
         // Otros elementos del menú con imágenes
 
         {
-            name: "Plato 2",
-            price: 2.99,
-            image: "url_de_la_imagen_2.jpg" // Agrega la URL de la imagen
+            name: "Ravioles con Salsa",
+            price: 1350,
+            image: "cliente/img/rxs.jpg" // Agrega la URL de la imagen
         },
 
         {
-            name: "Plato 2",
-            price: 3.99,
-            image: "url_de_la_imagen_2.jpg" // Agrega la URL de la imagen
+            name: "Canelones con Salsa",
+            price: 1425,
+            image: "cliente/img/cxs.jpg" // Agrega la URL de la imagen
         },
     ];
 
@@ -48,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         cart.forEach(item => {
             const li = document.createElement("li");
-            li.textContent = `${item.name} - ${item.price} USD`;
+            li.textContent = `${item.name} - ${item.price} $`;
             cartList.appendChild(li);
             totalPrice += item.price;
         });
@@ -62,20 +66,49 @@ document.addEventListener("DOMContentLoaded", function() {
         renderCart();
     });
 
+    // Funciones para mostrar alertas cuando se presionan los botones
+    callWaiterButton.addEventListener("click", function() {
+        alert("¡Llamando al mesero!");
+    });
+
+    orderDrinkButton.addEventListener("click", function() {
+        alert("¡Pedido de bebida artesanal realizado!");
+    });
+
+    requestBillButton.addEventListener("click", function() {
+        alert("¡Solicitando la cuenta!");
+    });
+
+    cancelOrderButton.addEventListener("click", function() {
+        alert("¡Pedido cancelado!");
+    });
+
     // Renderizar elementos del menú
     menuItems.forEach(item => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-            <div class="menu-item">
-                <img src="${item.image}" alt="${item.name}"> <!-- Mostrar imagen desde la carpeta "img" -->
-                <h3>${item.name}</h3>
-                <p>${item.price} USD</p>
-                <button class="add-to-cart">Agregar</button>
-            </div>
-        `;
-        menuList.appendChild(li);
+        const div = document.createElement("div");
+        div.classList.add("menu-item");
 
-        const addButton = li.querySelector(".add-to-cart");
+        const img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.name;
+
+        const h3 = document.createElement("h3");
+        h3.textContent = item.name;
+
+        const p = document.createElement("p");
+        p.textContent = `${item.price} $`;
+
+        const addButton = document.createElement("button");
+        addButton.textContent = "Agregar";
+        addButton.classList.add("add-to-cart");
+
+        div.appendChild(img);
+        div.appendChild(h3);
+        div.appendChild(p);
+        div.appendChild(addButton);
+
+        menuList.appendChild(div);
+
         addButton.addEventListener("click", () => addToCart(item));
     });
 });
