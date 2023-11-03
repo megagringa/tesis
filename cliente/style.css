@@ -5,14 +5,19 @@ body {
     padding: 0;
 }
 
-.menu, .cart, .actions {
-    margin: 10px;
+.menu {
+    margin: 50px 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 30%;
+    width: 100%;
     box-sizing: border-box;
-    float: left;
+    overflow: auto;
+}
+
+.menu-item {
+    display: inline-block;
+    margin-right: 10px;
 }
 
 ul {
@@ -37,13 +42,6 @@ button {
 
 button:hover {
     background-color: #005f80;
-}
-
-.menu-item {
-    display: flex;
-    flex-direction: column; /* Aplicar dirección de columna para el diseño deseado */
-    align-items: center;
-    margin-bottom: 10px;
 }
 
 .menu-item img {
