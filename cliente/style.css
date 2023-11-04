@@ -1,23 +1,18 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(240, 240, 240, 0.8); /* Fondo de color gris claro */
     margin: 0;
     padding: 0;
 }
 
-.menu {
-    margin: 50px 10px;
+.menu, .cart, .actions {
+    margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%;
+    width: 30%;
     box-sizing: border-box;
-    overflow: auto;
-}
-
-.menu-item {
-    display: inline-block;
-    margin-right: 10px;
+    float: left;
 }
 
 ul {
@@ -44,8 +39,67 @@ button:hover {
     background-color: #005f80;
 }
 
+.menu {
+    clear: both;
+}
+
+.menu ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu li {
+    margin-right: 10px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
 .menu-item img {
     width: 100px;
     height: 100px;
     object-fit: cover;
+}
+
+.actions {
+    float: right;
+}
+
+.button {
+    background-color: #FF5733;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+#notification-list {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#num-personas {
+    width: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#divide-cuenta-button {
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#divide-cuenta-button:hover {
+    background-color: #005f80;
 }

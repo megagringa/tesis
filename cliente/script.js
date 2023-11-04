@@ -7,9 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const orderDrinkButton = document.getElementById("order-drink");
     const requestBillButton = document.getElementById("request-bill");
     const cancelOrderButton = document.getElementById("cancel-order");
+    const numPersonasInput = document.getElementById("num-personas");
+    const divideCuentaButton = document.getElementById("divide-cuenta");
 
     // Array para almacenar los elementos del menú
-    
     const menuItems = [
         {
             name: "Fideos con Salsa",
@@ -22,13 +23,11 @@ document.addEventListener("DOMContentLoaded", function() {
             image: "cliente/img/nxs.jpeg" // Agrega la URL de la imagen
         },
         // Otros elementos del menú con imágenes
-
         {
             name: "Ravioles con Salsa",
             price: 1350,
             image: "cliente/img/rxs.jpg" // Agrega la URL de la imagen
         },
-
         {
             name: "Canelones con Salsa",
             price: 1425,
@@ -81,6 +80,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     cancelOrderButton.addEventListener("click", function() {
         alert("¡Pedido cancelado!");
+    });
+
+    // Función para dividir la cuenta entre varias personas
+    divideCuentaButton.addEventListener("click", function() {
+        const numPersonas = parseInt(numPersonasInput.value, 10);
+        if (numPersonas > 0) {
+            const total = parseFloat(totalDisplay.textContent);
+            const totalPorPersona = total / numPersonas;
+            alert(`La cuenta se divide en ${numPersonas} personas. Cada persona debe pagar ${totalPorPersona.toFixed(2)} $.`);
+        } else {
+            alert("Por favor, ingresa un número válido de personas.");
+        }
     });
 
     // Renderizar elementos del menú

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="cliente/style.css">
-    <link rel="stylesheet" type="text/css" href="cliente/mediaquerry.css">
     <title>Restaurante Tablet</title>
 </head>
 <body>
@@ -20,6 +19,9 @@
             <!-- Aquí se mostrarán los elementos del carrito dinámicamente -->
         </ul>
         <p>Total: <span id="total-price">0.00</span> $</p>
+        <label for="num-personas">Número de Personas:</label>
+        <input type="number" id="num-personas" min="1" value="1">
+        <button id="divide-cuenta">Dividir Cuenta</button>
         <button id="clear-cart">Limpiar Carrito</button>
     </div>
     <div class="actions">
